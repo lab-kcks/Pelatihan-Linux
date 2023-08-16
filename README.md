@@ -297,17 +297,6 @@ Parameter yang sering dipakai pada perintah ls adalah `-a` dan `-l`.
 Contoh `man ls` akan menampilkan manual penggunaan command `ls`.
 Untuk keluar dari tampilan manual tersebut kita tinggal menekan tombol `q`. 
 ![man](img/manls.png)
-*man pages* atau perintah `man` juga memiliki keunikan dalam *device* **FreeBSD** dan **Linux** karena membagi *man pages* kedalam beberapa bagian seperti dalam tabel dibawah ini.
-![man](img/man-pages.png)
-
-Sebagai contohnya, didalam **Linux** biasanya terdapat file `passwd` dan perintah `passwd`. Jika kita menjalankan perintah
-+ `man passwd` maka perintah `man` akan memberikan *manuals* untuk perintah `passwd`
-![man](img/man-command-passwd.png)
-+ Namun jika menjalankan perintah `man 5 passwd` maka akan memberikan *manuals* untuk file `passwd` 
-![man](img/man-file-passwd.png)
-
-Untuk mengetahui ada berapa bagian *manual* yang tersedia, kita dapat menjakankan perintah `man -k [kata yang dicari]`
-![man](img/man-option-k.png)
 
 ##### 4. cd
 *change directory*. Digunakan untuk pindah ke directory lain. Syntax-nya adalah ```cd [namadirectory]```.
@@ -386,32 +375,6 @@ Digunakan untuk menampilkan list directory.
 Untuk menggunakan command ini, user harus meng-*install*-nya terlebih dahulu dengan command
 `sudo apt-get install tree`  
 ![tree](img/tree.png)
-
-##### 18. mount
-Digunakan untuk melakukan mount. Syntax-nya adalah `sudo mount [file/device yang mau di-mount] [directory tempat dia akan di-mount]`
-Contoh: ada suatu file _iso_ yang berisi beberapa file. Untuk dapat mengakses file-file di dalamnya melalui terminal, maka kita harus _mount_ file tersebut ke suatu directory.  
-![mount](img/mount.JPG)  
-
-##### 19. unmount
-Digunakan untuk melakukan _unmount_. Syntax-nya adalah `umount [directory tempat suatu file/device di-mount]`.
-Nama command-nya `umount` yaa bukan _unmount_.  
-![unmount](img/umount.JPG)  
-
-##### 20. dpkg
-Adalah Debian Package Manager. Salah satu kegunaannya adalah untuk meng-install suatu aplikasi yang di-download dari browser.
-Syntax-nya adalah `dpkg -i [path ke file installer aplikasi]`
-Contohnya adalah saat kalian ingin meng-install _google chrome_ maka kalian dapat menggunakan perintah-perintah di bawah ini:
-pertama download dulu installer google chrome yang berekstensi __.deb__
-```sh
-$ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  
-```  
-![wget](img/wget.JPG)  
-
-lalu untuk meng-installnya gunakan command
-```sh
-$ dpkg -i google-chrome-stable_current_amd64.deb
-```  
-![dpkg](img/dpkg2.jpg)  
 
 ### 2. Administrative Command
 ##### 1. su
