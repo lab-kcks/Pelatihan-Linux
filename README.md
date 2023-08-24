@@ -3,10 +3,6 @@
 2. [Instalasi](#instalasi)
 4. [Konsep](#konsep)
 3. [CLI](#command-line-interface)
-5. [Networking](#networking)
-6. [Penggunaan Aplikasi](#penggunaan-aplikasi)
-7. [Setup SSH Keys](#setup-ssh-keys)
-8. [Tugas Mandiri](#tugas-mandiri)
 
 
 # Pengenalan
@@ -605,6 +601,246 @@ $ sudo apt-get install <packages>
 Opsi **install** ini diikuti oleh beberapa nama paket yang akan diinstall. 
 Semua paket yang dibuthkan oleh paket yang akan diinstall juga akan terunduh dan terinstall. Berkas /etc/apt/sources.list digunakan untuk menentukan lokasi repositori dari paket yang dimaksud.
 
+# Tutorial git (judulnya aku gatau masi bisa diganti)
+Sub-materi
+1. [Pengenalan git](#pengenalan-git)
+2. [Instalasi Git dan Konfigurasi Awal](#instalasi-git-dan-konfigurasi-awal)
+3. [Basic Command git](#basic-command)
+
+### 1. Pengenalan GIT
+#### 1.1 Mengenal Git
+
+[![HbuXSyv.md.webp](https://iili.io/HbuXSyv.md.webp)](https://freeimage.host/i/HbuXSyv)
+
+Git adalah salah satu sistem pengontrol versi (Version Control System) pada proyek perangkat lunak yang diciptakan oleh Linus Torvalds.
+Pengontrol versi bertugas mencatat setiap perubahan pada file proyek yang dikerjakan oleh banyak orang maupun sendiri.
+Git dikenal juga dengan distributed revision control (VCS terdistribusi), artinya penyimpanan database Git tidak hanya berada dalam satu tempat saja.
+
+[![Hbuj5q7.md.png](https://iili.io/Hbuj5q7.md.png)](https://freeimage.host/i/Hbuj5q7)
+
+Semua orang yang terlibat dalam pengkodean proyek akan menyimpan database Git, sehingga akan memudahkan dalam mengelola proyek baik online maupun offline.Dalam Git terdapat merge untuk menyebut aktifitas penggabungan kode. Sedangkan pada VCS (Version Control System) yang terpusat… database disimpan dalam satu tempat dan setiap perubahan disimpan ke sana.
+
+VCS terpusat memiliki beberapa kekurangan:
+* Semua tim harus terkoneksi ke jaringan untuk mengakses source-code
+* Tersimpan di satu tempat, nanti kalau server bermasalah bagaimana?
+
+Karena itu, Git hadir untuk menutupi kerkurangan yang dimiliki oleh VCS terpusat.
+
+#### 1.2 Apa yang dilakukan oleh Git?
+Git sebenarnya akan memantau semua perubahan yang terjadi pada file proyek. Lalu menyimpannya ke dalam database.
+
+Sebelum menggunakan Git:
+
+[![HbuNkVp.md.png](https://iili.io/HbuNkVp.md.png)](https://freeimage.host/i/HbuNkVp)
+
+Setelah menggunakan Git:
+
+[![HbuOq0P.md.png](https://iili.io/HbuOq0P.md.png)](https://freeimage.host/i/HbuOq0P)
+
+Saat kita ingin menyimpan semua perubahan pada file, biasanya kita membuat file baru dengan “save as”. Lalu, file akan menumpuk dalam direktori proyek seperti pada ilustrasi di atas.
+
+Tapi setelah menggunakan Git…
+
+Hanya akan ada satu file dalam proyek dan perubahannya disimpan dalam database. Git hanya akan menyimpan delta perubahannya saja, dia tidak akan menyimpan seluruh isi file yang akan memakan banyak memori. Git memungkinkan kita kembali ke versi revisi yang kita inginkan.
+
+#### 1.3 Kenapa Git Penting Bagi Programmer?
+Jadi selain untuk mengontrol versi, git juga digunakan untuk kolaborasi. Saat ini Git menjadi salah satu tool terpopuler yang digunakan pada pengembangan software open souce maupun closed source. Google, Microsoft, Facebook dan berbagai perusahaan raksasa lainnya menggunakan Git.
+
+Selain itu, berikut ini ada beberapa menfaat yang akan kamu rasakan setelah bisa menggunakan Git.
+
+* Bisa menyimpan seluruh versi source code;
+* Bisa paham cara kolaborasi dalam proyek;
+* Bisa ikut berkontribusi ke poryek open-source;
+* Lebih aman digunakan untuk kolaborasi, karena kita bisa tahu apa yang diubah dan siapa yang mengubahnya.
+* Bisa memahami cara deploy aplikasi modern;
+* Bisa membuat blog dengan SSG.
+* dan sebagainya…
+
+### 2. Instalasi Git dan Konfigurasi Awal
+#### 2.1 Cara Install Git di Linux
+Instalasi Git pada Distro keluarga Debian dapat menggunakan perintah apt.
+
+```
+sudo apt install git
+```
+atau
+```
+sudo apt-get install git
+```
+Pada Fedora:
+
+```
+yum install git
+```
+Setelah itu, coba perika versi yang terinstal dengan perintah:
+```
+git --version
+```
+[![HphewNV.md.png](https://iili.io/HphewNV.md.png)](https://freeimage.host/i/HphewNV)
+
+#### 2.2 Cara Install Git di Windows
+Instalasi Git di Windows memang tidak seperti di Linux yang ketik perintah langsung terinstal. Kita harus men-download dulu, kemudian melakukan ritual next>next>finish. Tapi dalam ritual tersebut, ada pilihan yang harus diperhatikan agar perintah ```git``` dapat dikenali di CMD.
+##### 2.2.1 Download Git
+
+Silahkan buka website resminya Git [git-scm.com](https://git-scm.com). Kemudian unduh Git sesuai dengan arsitektur komputer kita. Kalau menggunakan 64bit, unduh yang 64bit. Begitu juga kalau menggunakan 32bit.
+
+##### 2.2.3 Langkah-langkah Install Git di Windows
+Baiklah, mari kita mulai ritual instalnya. Silahkan klik 2x file instaler Git yang sudah diunduh.
+
+[![Hph8Fcu.md.jpg](https://iili.io/Hph8Fcu.md.jpg)](https://freeimage.host/i/Hph8Fcu)
+
+Maka akan muncul infomasi lisensi Git, klik Next > untuk melanjutkan.
+
+[![Hph8kVS.jpg](https://iili.io/Hph8kVS.jpg)](https://freeimage.host/id)
+
+Selanjutnya menentukan lokasi instalasi. Biarkan saja apa adanya, kemudian klik Next >.
+
+[![Hph8mUg.jpg](https://iili.io/Hph8mUg.jpg)](https://freeimage.host/id)
+
+Selanjutnya pemilihan komoponen, biarkan saja seperti ini kemudian klik Next >.
+
+[![HphSFsI.jpg](https://iili.io/HphSFsI.jpg)](https://freeimage.host/id)
+
+Selanjutnya pemlilihan direktori start menu, klik Next >.
+
+[![HphSXqP.jpg](https://iili.io/HphSXqP.jpg)](https://freeimage.host/id)
+
+Selanjutnya pengaturan PATH Environment. Pilih yang tengah agar perintah ```git``` dapat di kenali di Command Prompt (CMD). Setelah itu klik Next >.
+
+[![HphU949.jpg](https://iili.io/HphU949.jpg)](https://freeimage.host/id)
+
+Selanjutnya konversi line ending. Biarkan saja seperti ini, kemudian klik Next >.
+
+[![HphUz3F.jpg](https://iili.io/HphUz3F.jpg)](https://freeimage.host/id)
+
+Selanjutnya pemilihan emulator terminal. Pilih saja yang bawah, kemudian klik Next >.
+
+[![HphU13X.jpg](https://iili.io/HphU13X.jpg)](https://freeimage.host/id)
+
+Selanjutnya pemilihan opsi ekstra. Klik saja Next >.
+
+[![HphUrwx.jpg](https://iili.io/HphUrwx.jpg)](https://freeimage.host/id)
+
+Selanjutnya pemilihan opsi ekspreimental, langsung saja klik Install untuk memaulai instalasi.
+
+[![HphUpwv.jpg](https://iili.io/HphUpwv.jpg)](https://freeimage.host/id)
+
+Tunggu beberapa saat, instalasi sedang dilakukan.
+
+[![Hphr0es.jpg](https://iili.io/Hphr0es.jpg)](https://freeimage.host/id)
+
+Setelah selesai, kita bisa langsung klik Finish.
+
+[![HphrrBV.jpg](https://iili.io/HphrrBV.jpg)](https://freeimage.host/id)
+
+Selamat, Git sudah terinstal di Windows. Untuk mencobanya, silahkan buka CMD atau PowerShell, kemudian ketik perintah ```git --version.
+
+[![Hph4iMl.md.png](https://iili.io/Hph4iMl.md.png)](https://freeimage.host/i/Hph4iMl)
+
+#### 2.3 Konfigurasi Awal
+Ada beberapa konfigurasi yang harus dupersiapakan sebelum mulai menggunakan Git, seperti name dan email.
+
+Silahkan lakukan konfigurasi dengan perintah berikut ini.
+
+`git config --global user.name "John Doe"`
+`git config --global user.email johndoe@example.com`
+
+Untuk mengecek apakah sudah terkonfigurasi email dan username bisa menggunakan 
+`git config --list`
+
+Dalam kasus seperti pada umumnya kita akan diminta credential github berupa username github dan token git, seperti ini
+![gitlogin](img/gitlogin.png)
+Untuk bisa melakukan push tanpa memasukkan otomatis kita bisa store credentials di global sehingga kita tidak perlu memasukkan credential
+ - 1. Generate Token
+![generatetoken](img/generatetoken.png)
+ - 2. `nano ~/.git-credentials`
+![gitcred](img/gitcred.png)
+Tulis https://Username:token@github.com pada file ini
+ - 3. `git config --global credential.helper store`
+![gitnocred](img/gitnocred.png)
+Dengan ini kalian tidak perlu lagi memasukkan credential github ketika akan melakukan push
+
+### 3. Basic Command Git
+#### 3.1 Git Init
+Command ini digunakan untuk membuat repositori Git baru di dalam direktori proyek. Setelah dieksekusi, Git akan mulai melacak perubahan pada proyek di dalam repositori tersebut.
+
+```git init ```
+
+#### 3.2 Git Remote Add
+
+```git remote add <nama-remote> <URL-remote>```
+
+ika proyek Anda akan disimpan di remote repository (seperti GitHub, GitLab, atau Bitbucket), Anda perlu menambahkan remote repository tersebut ke dalam repositori lokal. ```<nama-remote>``` adalah nama yang Anda tentukan untuk remote, dan ```<URL-remote>``` adalah URL dari remote repository tersebut.
+
+contoh lengkap :
+
+```git remote add origin https://github.com/username/repository.git```
+
+#### 3.3 Git Add
+
+```git add <nama-file>```
+
+Command ini digunakan untuk menambahkan perubahan pada file yang ingin Anda lacak ke dalam staging area. Anda dapat menyertakan nama file atau menggunakan tanda . untuk menambahkan semua perubahan dalam direktori.
+
+contoh lengkap:
+* Untuk menambahkan semua perubahan:
+
+```git add .```
+
+* Untuk menambahkan perubahan pada file tertentu:
+
+```git add nama-file.txt```
+
+* Untuk melihat status perubahan:
+
+```git status```
+
+* Git Commit
+
+```git commit -m "pesan-commit"```
+
+Setelah Anda menambahkan perubahan ke staging area, Anda perlu membuat commit untuk menyimpan perubahan tersebut ke dalam sejarah repositori. Pesan commit harus jelas dan menggambarkan perubahan yang dilakukan.
+
+contoh lengkap:
+
+```git commit -m "Pesan commit mengenai perubahan yang dilakukan"```
+
+#### 3.4 Git Branch
+
+```git branch```
+
+Command ini menampilkan daftar cabang yang ada dalam repositori Anda. Cabang digunakan untuk mengembangkan fitur atau memperbaiki bug tanpa mempengaruhi cabang utama (biasanya disebut "master" atau "main").
+
+#### 3.5 Git Checkout
+
+```git checkout <nama-cabang>```
+
+Untuk pindah ke cabang yang berbeda, Anda menggunakan command ini. Misalnya, git checkout nama-cabang akan memindahkan Anda ke cabang dengan nama yang diisikan.
+
+contoh lengkap:
+
+```git checkout nama-cabang```
+
+#### 3.6 Git Pull
+
+```git pull <nama-remote> <nama-cabang```
+
+Command ini digunakan untuk mengambil perubahan dari remote repository ke repositori lokal. Ini berguna jika ada perubahan yang dilakukan oleh anggota tim atau pada remote repository.
+
+contoh lengkap:
+
+```git pull origin main```
+
+#### 3.7 Git Push
+
+```git push <nama-remote> <nama-cabang>```
+
+Command ini digunakan untuk mengirim perubahan yang ada pada repositori lokal ke remote repository. Ini berguna jika Anda ingin berbagi perubahan Anda dengan anggota tim atau mengamankan perubahan pada server remote.
+
+contoh lengkap:
+
+```git push origin main```
+
 ##### Referensi
 + https://searchdatacenter.techtarget.com/tutorial/77-Linux-commands-and-utilities-youll-actually-use
 + https://linux.die.net/man/8/apt-get
@@ -621,405 +857,3 @@ Semua paket yang dibuthkan oleh paket yang akan diinstall juga akan terunduh dan
 + https://askubuntu.com/questions/219545/dpkg-error-dpkg-status-database-is-locked-by-another-process
 
 <div style="page-break-after: always;"></div>
-
-
-# Networking
-
-sub-materi
-
-- [1. Setting IP Address Statis](#1-Setting-IP-Address-Statis)
-  - [a. GUI](#a-GUI)
-  - [b. CLI](#b-CLI)
-- [2. Crimping](#wire-crimping)
-- [3. VirtualBox Networking Modes](#3-VirtualBox-Networking-Modes)
-- [4. Bridged Networking vs NAT](#4-Bridged-Networking-vs-NAT)
-
-### 1. Setting IP Address Statis
-##### A. GUI
-1. klik ikon koneksi, lalu pilih 'edit'.
-
-![](img/1.png)
-
-2. pilih 'wired connection 1' dan klik tombol 'edit'
-
-![](img/2.png)
-
-3. pilih tab 'IPv4 Settings'
-
-![](img/3.png)
-
-4. ubah metodenya menjadi manual, serta tambahkan alamat baru yang kita inginkan, serta atur DNS server serta search domain sesuai kebutuhan.
-
-![](img/4.png)
-
-5. untuk mengaplikasikan perubahan silahkan lakukan koneksi ulang.
-
-##### B. CLI
-1.  ubah file **/etc/network/interfaces** dengan cara memasukkan command di bawah ini ke terminal :
-```
-$ sudo nano /etc/network/interfaces
-```
-2. ubah isi file menjadi
-```
-auto <interface>
-iface <interface> inet static
-address <ip static>
-netmask 255.255.255.0
-gateway 10.151.36.1
-dns-search if.its.ac.id
-```
-3. setelah merubah isi file interfaces restart service networking kalian dengan menjalankan command berikut
-```
-$ sudo service networking restart
-```
-
-## WIRE CRIMPING
-Dalam membangun jaringan komputer, tentunya dibutuhkan segala hal yang dapat menghubungkan perangkat-perangkat komputer yang ada. Hingga saat ini, komponen paling fundamental dalam jaringan komputer adalah kabel. Sekalipun teknologi nirkabel sudah lama ditemukan dan dikembangkan, tapi peran kabel jaringan tetap belum bisa tergantikan. Oleh karena itu di sini kita akan belajar bagaimana membuat kabel jaringan (dalam hal ini kabel UTP) menjadi fungsional.
-
-__1. *Kebutuhan*__
-
-Peralatan dan bahan yang perlu dipersiapkan:
-
-__1.1. Tang Crimping__
-
-![ExportObjects](images/taang.jpg)
-
-__1.2. RJ-45__
-
-![ExportObjects](images/rj45.jpg)
-
-__1.3. Kabel UTP__
-
-![ExportObjects](images/utp.jpg)
-
-__1.4. Lan tester__
-
-![ExportObjects](images/lantest.jpg)
-
-__2. *Jenis-Jenis Pengkabelan*__
-
-__2.1. Straight (T568B)__
-
-Kabel straight merupakan kabel yang memiliki cara pemasangan yang sama antara ujung satu dengan ujung yang lainnya. Kabel straight digunakan untuk menghubungkan 2 device yang berbeda, misalnya antara switch dengan router dan komputer dengan switch. Urutan kabel straight jika dilihat dari sisi tembaga RJ-45 adalah seperti dibawah ini:
-
-![ExportObjects](images/straight.jpg)
-
-
-__2.2. Crossover (T568A)__
-
-Kabel crossover merupakan kabel yang memiliki susunan berbeda antara ujung satu dengan ujung dua. Kabel crossover digunakan untuk menghubungkan 2 device yang sama. Jika dilihat dari sisi tembaga RJ-45, berikut susunan kabel crossover:
-
-![ExportObjects](images/cross.jpg)
-
-__3. *Cara Crimping*__
-
-- Mengupas kulit kabel selebar +-2 cm menggunakan tang crimping.
-
-- Menyusun rapi delapan kabel yang terdapat didalam kabel UTP sesuai dengan jenis kabel mana yang ingin dibuat (straight atau cross).
-
-- Meluruskan kabel yang masih kusut.
-
-- Meratakan ujung kabel dengan memotong nya menggunakan tang crimping.
-
-- Memasukan kabel kedalam konektor RJ-45, pastikan ujung kabel menyentuh ujung RJ-45, dan jepitlah menggunakan tang crimping.
-
-- Lakukan hal serupa pada kedua ujung kabel.
-
-- Menguji menggunakan LAN tester, jika semua lampu menyala, berarti kabel tersebut telah di crimping dengan benar dan bisa digunakan.
-
-### 3. VirtualBox Networking Modes
-
-- Not attached
-
-- Network Address Translation (NAT)
-
-- NAT Network
-
-- Bridged networking
-
-- Internal networking
-
-- Host-only networking
-
-- Generic networking
-
-
-### 4. Bridged Networking vs NAT
-
-![NAT and Bridged network simple diagram](img/0.png)
-
-Dalam diagram ini, garis vertikal di sebelah firewall merepresentasikan jaringan produksi dan kita dapat melihat bahwa 192.168.1.1 adalah alamat IP firewall _organisasi_ yang menghubungkannya ke Internet. Ada juga virtual host dengan tiga mesin virtual yang berjalan di dalamnya. Lingkaran merah mewakili adaptor virtual yang menghubungkan mesin virtual NAT (172.16.1.1). Kita dapat melihat bahwa ada dua mesin virtual seperti itu dengan alamat IP 172.16.1.2 dan 172.16.1.3. Saat kita mengonfigurasi mesin virtual yang menggunakan NAT, ia tidak melihat jaringan _organisasi_ secara langsung. Bahkan, semua lalu lintas yang berasal dari mesin virtual akan menggunakan alamat IP host VM. Di belakang layar, lalu lintas dari mesin virtual diarahkan pada virtual host dan dikirim melalui adaptor fisik host dan, akhirnya, ke Internet.
-
-Mesin virtual ketiga (192.168.1.3) dikonfigurasi dalam mode “**bridged**” yang pada dasarnya berarti bahwa adaptor jaringan virtual dalam mesin virtual tersebut dijembatani ke jaringan _organisasi_ dan mesin virtual itu beroperasi seolah-olah ada langsung di jaringan _organisasi_. Seperti mesin virtual berbasis NAT yang tidak dapat melihat jaringan _organisasi_, begitu juga sebalikya, mesin virtual dengan mode bridged network tidak dapat melihat dua mesin virtual berbasis NAT.
-
-
-##### Referensi :
-- https://www.virtualbox.org/manual/ch06.html#networkingmodes
-- http://techgenix.com/nat-vs-bridged-network-a-simple-diagram-178/
-- https://www.virtualbox.org/manual/ch06.html#networkingmodes
-
-<div style="page-break-after: always;"></div>
-
-
-# Penggunaan Aplikasi
-
-### Instalasi LAMP Stack pada Ubuntu
-Sub-Materi
-1. [Instalasi Apache](#1-instalasi-apache)
-2. [Instalasi MySQL](#2-instalasi-mysql)
-3. [Instalasi PHP](#3-instalasi-php)
-4. [Penggunaan](#4-penggunaan)
-
-#### 1. Instalasi Apache
-Untuk melakukan instalasi, ketikkan command berikut:
-
-```shell
-$ sudo apt-get update
-$ sudo apt-get install apache2
-```
-
-#### 2. Instalasi MySQL
-Untuk melakukan instalasi, ketikkan command berikut:
-
-```shell
-$ sudo apt-get install mysql-server
-```
-
-Selama proses instalasi, pengguna akan diminta memasukkan password untuk MySQL root user.
-
-#### 3. Instalasi PHP
-Untuk melakukan instalasi, ketikkan command berikut:
-```shell
-$ sudo apt-get install php
-```
-
-#### 4. Penggunaan
-__Apache__<br>
-Untuk melihat apakah server apache sudah berjalan, ketikkan command berikut
-
-```shell
-sudo service apache2 status
-```
-
-Jika sudah berjalan, output yang seharusnya adalah sebagai berikut:
-![apache-status](img/apache-status.png) <br>
-
-```shell
-sudo service apache2 restart
-sudo service apache2 stop
-sudo service apache2 start
-```
-
-| Command | Kegunaan |
-| ----- | ----- |
-| restart | Digunakan untuk merestart servis apache. |
-| stop | Digunakan untuk mematikan servis apache. |
-| start | Digunakan untuk menyalakan servis apache. |
-
-Secara default root folder dari Apache berada di ___/var/www/html___. Apache memiliki folder untuk konfigurasi yang berada di ___/etc/apache___. Perlu untuk diketahui:
-
-| Nama File | Pengertian |
-| --------- | ---------- |
-| **apache2.conf** | file konfigurasi utama apache2. |
-| **ports.conf** | file konfigurasi port yang digunakan untuk webserver. |
-| **sites-available** | folder tempat konfigurasi website (virtual host) yang tersedia. |
-| **sites-enabled** | folder tempat konfigurasi website (virtual host) yang tersedia dan sudah aktif. |
-| **mods-available** | folder tempat modul-modul apache2 yang tersedia. |
-| **mods-enabled** | folder tempat modul-modul apache2 yang tersedia dan sudah aktif. |
-
-* ***Tentang Command***
-
-| Command | Arti |
-| ------- | ------- | 
-| a2ensite | Untuk memasukkan atau ENABLE config yang telah dibuat |
-| a2dissite | Untuk menonaktifkan atau DISABLE config yang telah dibuat |
-| a2enmod | Untuk ENABLE spesifik modul ke dalam konfigurasi apache2 |
-| a2dismod | Untuk DISABLE spesifik modul ke dalam konfigurasi apache2 |
-
-__MySQL__<br>
-Untuk melihat apakah MySQL sudah berjalan, ketikkan command berikut
-
-```shell
-$ sudo service mysql status
-```
-
-Jika sudah berjalan, output yang seharusnya adalah sebagai berikut:
-![mysql-status](img/mysql-status.png)<br>
-
-```shell
-sudo service mysql restart
-sudo service mysql stop
-sudo service mysql start
-```
-
-
-| Command | Kegunaan |
-| ----- | ----- |
-| restart | Digunakan untuk merestart servis MySQL. |
-| stop | Digunakan untuk mematikan servis MySQL. |
-| start | Digunakan untuk menyalakan servis MySQL. |
-
-
-Untuk masuk ke MySQL command prompt, ketikkan command berikut:
-
-```shell
-sudo mysql -u root -p
-```
-
-Command di atas berarti kita akan masuk ke MySQL command prompt sebagai root user. Untuk masuk dengan user yang lain, ubah root dengan username yang sesuai. Pengguna akan diminta memasukkan password sesuai usernamenya. 
-<br>
-Setelah masuk ke MySQL Command Prompt maka tampilannya adalah sebagai berikut:
-
-![mysql-rohana](img/mysql-rohana.png)<br>
-Pada contoh di atas maka pengguna masuk sebagai rohana.
-Dalam penggunaan MySQL, *command* yang dijalankan disebut sebagai *query* untuk mengeksekusi apa yang ingin kita lakukan terhadap database yang berada pada MySQL tersebut. Beberapa *query* dasar yang biasa digunakan untuk mengakses database, yaitu :
-   - `SHOW DATABASES;` untuk melihat database yang terdapat dalam MySQL tersebut.
-   - `CREATE DATABASE [nama_database];` untuk membuat database baru.
-   - `USE [nama_database]` untuk menggunakan database pada MySQL Server.
-   - Gunakan query `CREATE TABLE;` untuk membuat table dalam sebuah database pada MySQL.
-      ```sql
-         CREATE TABLE Pegawai (
-         id int,
-         nama varchar(255),
-         alamat varchar(255),
-         kota varchar(255) );
-      ```
-   - `SHOW TABLES;` untuk melihat table yang ada pada database tersebut.
-   - Gunakan query `INSERT` untuk menambahkan data ke dalam sebuah *table* dalam database sesuai dengan kolom yang tersedia.
-      ```sql
-         INSERT INTO Pegawai (id, nama, alamat, kota)
-         VALUES (001, 'ilham', 'perumahan dosen ITS', 'Surabaya');
-      ```
-   - `SELECT * FROM [nama_table];` untuk melihat semua isi sebuah table. 
-   - `DROP TABLE [nama_table];` untuk menghapus table dari sebuah database. 
-   - `DROP DATABASE [nama_database];` untuk menghapus database dari MySQL.
-   - `EXIT` untuk keluar dari command prompt MySQL.
-
-__PHP__<br>
-Untuk memastikan PHP sudah terinstal, buat file berekstensi php pada root folder apache.
-```shell
-sudo touch /var/www/html/index.php
-```
-
-Buka file yang sudah dibuat dengan menggunakan text editor:
-```shell
-sudo nano /var/www/html/index.php
-```
-
-Kemudian masukkan baris kode berikut:
-```php
-<?php
-   phpinfo();
-?>
-```
-
-Untuk melihat hasilnya, buka browser dan akses alamat __[IP server]/index.php__.
-![php-info](img/php-info.png)<br>
-
-**Note**
-
-Jika halaman belum muncul seperti pada gambar di atas, silakan install library php untuk apache2 web server dengan menjalankan `sudo apt-get install libapache2-mod-php`.
-
-Cara lain untuk mencoba, dapat dicoba dengan memasukkan kode berikut pada file index.php, lalu akses kembali alamat __[IP server]/index.php__ melalui browser laptop masing-masing.
-
-```php
-<?php
-   echo "Coba PHP di Web Server Apache pada waktu Pelatihan Linux 2019";
-?>
-```
-
-__Referensi__<br>
-+ https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04
-
-### Mengatur SSH Keys
-Secure Shell (lebih dikenal sebagai SSH) memungkinkan pengguna untuk melakukan layanan jaringan secara aman pada jaringan yang tidak aman. SSH Keys menyediakan keamanan lebih dibandingkan hanya dengan menggunakan password. Password dapat dipecahkan melalui metode *brute force* sedangkan SSH Keys hampir tidak mungkin dipecahkan hanya dengan *brute force* saja.
-SSH Keys menggunakan metode algoritma RSA untuk menghasilkan sebuah pasangan 'kunci'nya, maka SSH Keys juga biasa disebut dengan RSA Key. Sebuah pasangan RSA Key akan terdiri dari ***private key*** (**kunci privat**) dan ***public key*** (**kunci umum**)
-
-#### Membuat Pasangan RSA Key
-
-```shell
-$ ssh-keygen -t rsa
-```
-
-#### Menyimpan Keys dan Passphrase
-
-**SSH Key**
-
-```shell
-Enter file in which to save the key (/home/rohana/.ssh/id_rsa):
-```
-
-Tekan enter untuk menyimpan pada home folder pengguna (pada contoh, pengguna di sini adalah rohana)
-
-```shell
-Enter passphrase (empty for no passphrase):
-```
-Di sini kita bisa memilih untuk menggunakan passphrase atau tidak. Dengan menggunakan passphrase tentunya lebih aman namun kita harus memasukkan passphrase kita tiap ingin menggunakan key pair.
-
-Output dari keseluruhan proses:
-```
-Generating public/private rsa key pair.
-Enter file in which to save the key (/home/rohana/.ssh/id_rsa): 
-Enter passphrase (empty for no passphrase): 
-Enter same passphrase again: 
-Your identification has been saved in /home/rohana/.ssh/id_rsa.
-Your public key has been saved in /home/rohana/.ssh/id_rsa.pub.
-The key fingerprint is:
-SHA256:1gT2KTvnPefNIUtUc4z2cTA3hDYgusBvkycazQILA4g rohana@ABIMANYU
-The key's randomart image is:
-+---[RSA 2048]----+
-|+       o. .. =o.|
-|E   .  ..o.. + *.|
-| o . o .. + . +++|
-|  o o = o=   ...=|
-|   . o XS.o  .  .|
-|      =.++ ..    |
-|     .    . oo.. |
-|            .+oo.|
-|             .. o|
-+----[SHA256]-----+
-
-```
-
-#### Copy the Public Key
-Salin puclic key dengan menggunakan command `ssh-copy-id`:
-
-```shell
-$ ssh-copy-id rohana@10.151.253.118
-```
-
-Jangan lupa mengganti username dan IP pada contoh. Sekarang coba untuk login ke user yang sudah memiliki public key kita, kita tidak akan dimintai password. Namun, jika kita sebelumnya memasukkan passphrase maka kita akan diminta memasukkan passphrase tersebut.
-
-#### Cara Melakukan Koneksi dengan Menggunakan SSH
-Pada terminal, ketikkan command berikut:
-
-```shell
-$ ssh rohana@10.151.253.118
-```
-
-| Command | Keterangan |
-| ----- | ----- |
-| ssh | Command yang digunakan untuk melakukan koneksi remote |
-| rohana | Username yang akan diremote |
-| 10.151.253.118 | Alamat IP dari perangkat yang akan diremote |
-
-__Koneksi tanpa SSH Key__
-![ssh-without-key](img/ssh-wo-key.png)<br>
-Tanpa menggunakan SSH Key, kita akan diminta untuk memasukkan password.
-
-__Koneksi dengan SSH Key__
-![ssh-with-key1](img/ssh-w-key1.png)<br>
-![ssh-with-key2](img/ssh-w-key2.png)<br>
-Dengan menggunakan SSH Key, kita tidak diminta untuk memasukkan password dari perangkat yang akan diremote. Namun, karena sebelumnya kita menggunakan passphrase maka passphrase tersebut lah yang harus kita masukkan.
-
-__Referensi__<br>
-+ https://www.digitalocean.com/community/tutorials/how-to-set-up-ssh-keys--2
-+ Unix and Linux System Administration Handbook Fifth Edition
-
-# Tugas Mandiri
-
-Berikut adalah beberapa latihan yang dapat dilakukan ketika waktu luang untuk menyempurnakan sesi Pelatihan Linux 2019.
-1. Menggunakan text editor **nano** untuk menuliskan kesan dan pesan serta kritik dan saran terhadap pelaksanaan Pelatihan Linux 2019 di SMAN 1 KEDUNGWARU Tulungagung.
-2. Menampilkan **proses** yang berlangsung pada ubuntu server di Virtualbox menggunakan aplikasi **htop***. (petunjuk : install aplikasi dengan perintah `sudo apt-get install htop`)
-3. Membuat user baru bernama **tux** dengan hak akses superuser (*sudoers**) pada ubuntu server di Virtualbox. (petunjuk : sudoers adalah group untuk *superuser*)
-4. Mengatur hak akses file untuk user **tux** dengan hanya pemilik file yang dapat membaca, menulis, dan mengeksekusi. (petunjuk : ketentuan `700`)
