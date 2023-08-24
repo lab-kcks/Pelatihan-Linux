@@ -606,7 +606,7 @@ Semua paket yang dibuthkan oleh paket yang akan diinstall juga akan terunduh dan
 Sub-materi
 1. [Pengenalan git](#1-pengenalan-git)
 2. [Instalasi Git dan Konfigurasi Awal](#2-instalasi-git-dan-konfigurasi-awal)
-3. [Basic Command git](#3-basic-command)
+3. [Basic Command git](#3-basic-command-git)
 
 ### 1. Pengenalan GIT
 #### 1.1 Mengenal Git
