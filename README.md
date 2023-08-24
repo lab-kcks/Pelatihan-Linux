@@ -604,9 +604,9 @@ Semua paket yang dibuthkan oleh paket yang akan diinstall juga akan terunduh dan
 
 # Git Workflow
 Sub-materi
-1. [Pengenalan git](#pengenalan-git)
-2. [Instalasi Git dan Konfigurasi Awal](#instalasi-git-dan-konfigurasi-awal)
-3. [Basic Command git](#basic-command)
+1. [Pengenalan git](#1-pengenalan-git)
+2. [Instalasi Git dan Konfigurasi Awal](#2-instalasi-git-dan-konfigurasi-awal)
+3. [Basic Command git](#3-basic-command)
 
 ### 1. Pengenalan GIT
 #### 1.1 Mengenal Git
@@ -752,12 +752,12 @@ Untuk mengecek apakah sudah terkonfigurasi email dan username bisa menggunakan
 Dalam kasus seperti pada umumnya kita akan diminta credential github berupa username github dan token git, seperti ini
 ![gitlogin](img/gitlogin.png)	
 Untuk bisa melakukan push tanpa memasukkan otomatis kita bisa store credentials di global sehingga kita tidak perlu memasukkan credential
- - 1. Generate Token
+ - Generate Token
 ![generatetoken](img/generatetoken.png)
- - 2. `nano ~/.git-credentials`
+ - `nano ~/.git-credentials`
 ![gitcred](img/gitcred.png)
 Tulis https://Username:token@github.com pada file ini
- - 3. `git config --global credential.helper store`
+ - `git config --global credential.helper store`
 ![gitnocreds](img/gitnocreds.png)
 Dengan ini kalian tidak perlu lagi memasukkan credential github ketika akan melakukan push
 
