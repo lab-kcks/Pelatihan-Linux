@@ -3,6 +3,7 @@
 2. [Instalasi](#instalasi)
 4. [Konsep](#konsep)
 3. [CLI](#command-line-interface)
+5. [Git Workflow](#git-workflow)
 
 
 # Pengenalan
@@ -601,7 +602,7 @@ $ sudo apt-get install <packages>
 Opsi **install** ini diikuti oleh beberapa nama paket yang akan diinstall. 
 Semua paket yang dibuthkan oleh paket yang akan diinstall juga akan terunduh dan terinstall. Berkas /etc/apt/sources.list digunakan untuk menentukan lokasi repositori dari paket yang dimaksud.
 
-# Tutorial git (judulnya aku gatau masi bisa diganti)
+# Git Workflow
 Sub-materi
 1. [Pengenalan git](#pengenalan-git)
 2. [Instalasi Git dan Konfigurasi Awal](#instalasi-git-dan-konfigurasi-awal)
@@ -749,7 +750,7 @@ Untuk mengecek apakah sudah terkonfigurasi email dan username bisa menggunakan
 `git config --list`
 
 Dalam kasus seperti pada umumnya kita akan diminta credential github berupa username github dan token git, seperti ini
-![gitlogin](img/gitlogin.png)
+![gitlogin](img/gitlogin.png)	
 Untuk bisa melakukan push tanpa memasukkan otomatis kita bisa store credentials di global sehingga kita tidak perlu memasukkan credential
  - 1. Generate Token
 ![generatetoken](img/generatetoken.png)
@@ -757,7 +758,7 @@ Untuk bisa melakukan push tanpa memasukkan otomatis kita bisa store credentials 
 ![gitcred](img/gitcred.png)
 Tulis https://Username:token@github.com pada file ini
  - 3. `git config --global credential.helper store`
-![gitnocred](img/gitnocred.png)
+![gitnocreds](img/gitnocreds.png)
 Dengan ini kalian tidak perlu lagi memasukkan credential github ketika akan melakukan push
 
 ### 3. Basic Command Git
