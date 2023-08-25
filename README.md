@@ -139,43 +139,9 @@ Berikut ini perbandingan termasuk kelebihan dan kekurangan dari kedua teknik ins
 6. Anda akan diminta untuk menentukan ukuran hard disk. Untuk Ubuntu sendiri rekomendasi kapasitas hard disk minimal adalah 8GB. Diluar itu, Anda bisa menentukan space yang Anda inginkan. Jika sudah, klik **Next** 
 ![Set tipe harddisk VM baru Oracle VM VirtualBox](img/virtualbox-5.png "Set tipe harddisk VM baru Oracle VM VirtualBox")
 
-7. Virtual machine yang Anda buat sudah jadi!
-
-### 4. Instalasi Ubuntu 16.04
-Setelah berhasil membuat virtual machine, selanjutnya kita menginstall Ubuntu 16.04 pada virtual machine yang telah dibuat.
-1. Pilih virtual machine yang ingin di install, lalu klik **Setting** -> **Storage** -> **Controller: IDE** -> **Empty** -> **Choose Virtual Optical Disk File** untuk memilih file ISO Ubuntu yang akan di install. Kemudian klik **Start** (tanda panah hijau).
-![Set file ISO Ubuntu VM baru Oracle VM VirtualBox](img/vb_set_iso.png "Set file ISO Ubuntu VM baru Oracle VM VirtualBox")  
-![Set file ISO Ubuntu VM baru Oracle VM VirtualBox(2)](img/vb_get_iso_file.png "Set file ISO Ubuntu VM baru Oracle VM VirtualBox(2)")  
-![Set file ISO Ubuntu VM baru Oracle VM VirtualBox(3)](img/vb_vm_jadi.png "Set file ISO Ubuntu VM baru Oracle VM VirtualBox(3)")
-
-2. File ISO Ubuntu sudah berjalan. Selanjutnya tinggal ikuti langkah instalasinya. Klik **Install Ubuntu**.  
-![Instalasi Ubuntu(1)](img/vb_install_ubuntu1.png "Instalasi Ubuntu(1)")
-
-3. Tidak perlu mencentang apapun untuk menghemat waktu instalasi, kemudian klik **Continue**.  
-![Instalasi Ubuntu(2)](img/vb_install_ubuntu2.png "Instalasi Ubuntu(2)")
-
-4. Pilih **Erase disk and install Ubuntu**, lalu klik **Install Now**.  
-![Instalasi Ubuntu(3)](img/vb_install_ubuntu3.png "Instalasi Ubuntu(3)")
-
-5. Memilih zona waktu. Ketik **Jakarta**, lalu klik **Continue**.  
-![Instalasi Ubuntu(4)](img/vb_install_ubuntu4.png "Instalasi Ubuntu(4)")
-
-6. Memilih bahasa yang digunakan untuk penyesuaian keyboard. Ikuti saja defaultnya, langsung klik **Continue**.  
-![Instalasi Ubuntu(5)](img/vb_install_ubuntu5.png "Instalasi Ubuntu(5)")
-
-7. Mengatur nama, nama komputer, username, dan password. Biasanya ketika mengetikkan nama kita pada form **Your name**, form **Your computer's name** dan form **Pick a username** otomatis tergenerate sesuai nama yang kita ketikkan.  
-![Instalasi Ubuntu(6)](img/vb_install_ubuntu6.png "Instalasi Ubuntu(6)")
-
-8. Tunggu hingga proses instalasi selesai.  
-![Instalasi Ubuntu(7)](img/vb_install_ubuntu7.png "Instalasi Ubuntu(7)")
-
-9. Instalasi sudah selesai! Klik **Restart Now** untuk me-*restart* Ubuntu untuk menyudahi tahapan instalasi.  
-![Instalasi Ubuntu(8)](img/vb_install_ubuntu8.png "Instalasi Ubuntu(8)")
-
+7. Virtual machine yang Anda buat sudah jadi! Tunggu beberapa saat untuk VM menyiapkan OS dan Ubuntu siap digunakan.
 
 ##### Referensi
-- https://abrari.wordpress.com/2009/12/12/dual-booting-vs-virtualisasi/
-- https://id.wikihow.com/Memasang-Ubuntu-di-VirtualBox
 - https://www.ubuntu.com/
 - https://www.virtualbox.org/
 
