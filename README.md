@@ -100,8 +100,8 @@ Sub-materi
 4. [Instalasi Ubuntu](#4-instalasi-ubuntu-1604)
 
 ### 1. Persiapan
-- File ISO Ubuntu 16.04 LTS ([Download](http://releases.ubuntu.com/16.04/ubuntu-16.04.5-desktop-amd64.iso))
-- Installer VirtualBox ([Download](https://download.virtualbox.org/virtualbox/5.2.22/VirtualBox-5.2.22-126460-Win.exe))
+- File ISO Ubuntu 22.04 LTS ([Download](https://ubuntu.com/download/desktop))
+- Installer VirtualBox v7.1.0([Download](https://download.virtualbox.org/virtualbox/7.0.10/VirtualBox-7.0.10-158379-Win.exe))
 
 ### 2. Teknik Instalasi
 Jika hendak menggunakan lebih dari satu sistem operasi atau sering disebut OS(operating system) pada suatu komputer biasanya ada dua pilihan teknik instalasi, yaitu **dual-boot** atau **virtualisasi**.
@@ -122,7 +122,7 @@ Berikut ini perbandingan termasuk kelebihan dan kekurangan dari kedua teknik ins
 |Ideal untuk penggunaan sehari-hari, yang membutuhkan performa penuh komputer|Ideal untuk sekedar mengetes suatu OS, atau sekedar menjalankan suatu program yang tidak dapat berjalan pada OS host|
 |Jika terjadi kerusakan pada salah satu OS, ada kemungkinan berpengaruh dengan OS satunya|Kerusakan pada OS yang di virtualisasikan tidak akan berpengaruh pada OS host|
 
-### 3. Membuat Virtual Machine(VirtualBox v7.0.8) dengan Ubuntu 22.0.4
+### 3. Membuat Virtual Machine(VirtualBox v7.1.0) dengan Ubuntu 22.0.4
 1. Install versi terbaru Oracle VM VirtualBox. Jika sudah ada, lanjut ke langkah 2.
 2. Buka aplikasi Oracle VM VirtualBox di Windows Anda.  
 ![Tampilan awal Oracle VM VirtualBox](img/virtualbox-1.png "Tampilan awal Oracle VM VirtualBox")
