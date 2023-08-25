@@ -122,30 +122,24 @@ Berikut ini perbandingan termasuk kelebihan dan kekurangan dari kedua teknik ins
 |Ideal untuk penggunaan sehari-hari, yang membutuhkan performa penuh komputer|Ideal untuk sekedar mengetes suatu OS, atau sekedar menjalankan suatu program yang tidak dapat berjalan pada OS host|
 |Jika terjadi kerusakan pada salah satu OS, ada kemungkinan berpengaruh dengan OS satunya|Kerusakan pada OS yang di virtualisasikan tidak akan berpengaruh pada OS host|
 
-### 3. Membuat Virtual Machine
-1. Install Oracle VM VirtualBox. Jika sudah ada, lanjut ke langkah 2.
+### 3. Membuat Virtual Machine(VirtualBox v7.0.8) dengan Ubuntu 22.0.4
+1. Install versi terbaru Oracle VM VirtualBox. Jika sudah ada, lanjut ke langkah 2.
 2. Buka aplikasi Oracle VM VirtualBox di Windows Anda.  
-![Tampilan awal Oracle VM VirtualBox](img/vb_home.png "Tampilan awal Oracle VM VirtualBox")
+![Tampilan awal Oracle VM VirtualBox](img/virtualbox-1.png "Tampilan awal Oracle VM VirtualBox")
 
-3. Klik **New** untuk membuat Virtual Machine baru. Isi **name** dengan nama 'Ubuntu 16.04', **type** pilih Linux, dan pilih **version** sesuai sepesifikasi PC atau Laptop Anda. Kemudian klik **Next** untuk proses selanjutnya.  
-![Membuat Virtual Machine baru Oracle VM VirtualBox](img/vb_buat_vm_baru.png "Membuat Virtual Machine baru Oracle VM VirtualBox")
+3. Klik **New** untuk membuat Virtual Machine baru. Isi **name** dengan nama 'Ubuntu 22.0.4', pilih dimana **folder** VM diletakkan, dan lokasikan dimana file .iso dari OS Ubuntu berada. Kemudian klik **Next** untuk proses selanjutnya.  
+![Membuat Virtual Machine baru Oracle VM VirtualBox](img/virtualbox-2.png "Membuat Virtual Machine baru Oracle VM VirtualBox")
 
-4. Selanjutnya Anda disuruh untuk menentukan besaran memori, namun VirtualBox otomatis merekomendasikan besarnya memori. Jika sudah sesuai klik **Next**.  
-![Set memori VM baru Oracle VM VirtualBox](img/vb_set_memori.png "Set memori VM baru Oracle VM VirtualBox")
+4. Selanjutnya Anda disuruh untuk menentukan username dan password yang nantinya digunakan untuk log-in ke VM. Di section additional options di sebelah kanan, berikan nama hostname dan domain name yang sesuai (alfanumerik tanpa spasi). Jika sudah klik **Next**.  
+![Set memori VM baru Oracle VM VirtualBox](img/virtualbox-3.png "Set memori VM baru Oracle VM VirtualBox")
 
-5. Selanjutnya Anda disuruh untuk menentukan ukuran harddisk, namun VirtualBox otomatis merekomendasikan ukuran harddisk. Jika sudah sesuai klik **Next**.  
-![Set ukuran harddisk VM baru Oracle VM VirtualBox](img/vb_set_disk.png "Set ukuran harddisk VM baru Oracle VM VirtualBox")
+5. Selanjutnya Anda disuruh untuk menentukan ukuran memori RAM dan jumlah core/thread processor yang akan digunakan, namun VirtualBox otomatis merekomendasikan alokasi jumlah. Jika sudah sesuai dengan keinginan, klik **Next**.  
+![Set ukuran harddisk VM baru Oracle VM VirtualBox](img/virtualbox-4.png "Set ukuran harddisk VM baru Oracle VM VirtualBox")
 
-6. Klik **Next** saja pada proses ini untuk menuju proses selanjutnya.  
-![Set tipe harddisk VM baru Oracle VM VirtualBox](img/vb_set_disk_type.png "Set tipe harddisk VM baru Oracle VM VirtualBox")
+6. Anda akan diminta untuk menentukan ukuran hard disk. Untuk Ubuntu sendiri rekomendasi kapasitas hard disk minimal adalah 8GB. Diluar itu, Anda bisa menentukan space yang Anda inginkan. Jika sudah, klik **Next** 
+![Set tipe harddisk VM baru Oracle VM VirtualBox](img/virtualbox-5.png "Set tipe harddisk VM baru Oracle VM VirtualBox")
 
-7. Klik **Next** saja pada proses ini untuk menuju proses selanjutnya.  
-![Set tipe harddisk VM baru Oracle VM VirtualBox(2)](img/vb_set_disk_type2.png "Set tipe harddisk VM baru Oracle VM VirtualBox(2)")
-
-8. Menentukan ukuran harddisk(direkomendasikan minimal 10GB). Klik **Create**.  
-![Set ukuran harddisk VM baru Oracle VM VirtualBox(3)](img/vb_set_disk_size.png "Set ukuran harddisk VM baru Oracle VM VirtualBox(3)")
-
-9. Virtual machine yang Anda buat sudah jadi! Namun, Anda masih harus menginstall Ubuntu 16.04 pada virtual machine yang telah Anda buat.
+7. Virtual machine yang Anda buat sudah jadi!
 
 ### 4. Instalasi Ubuntu 16.04
 Setelah berhasil membuat virtual machine, selanjutnya kita menginstall Ubuntu 16.04 pada virtual machine yang telah dibuat.
